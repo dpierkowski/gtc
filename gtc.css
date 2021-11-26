@@ -1,0 +1,41 @@
+body {
+	font-family: 'Marcellus', serif;
+}
+
+.dropdown {
+	font-family: 'Marcellus', serif;
+}
+
+.input-panel {
+ 	display: flex;
+ 	flex-wrap: wrap;
+ 	margin-top: 20px;
+ 	margin-bottom: 20px;
+}
+
+.cards-in-hand-panel {
+	margin-left: 20px;
+}
+
+.cards-in-discard-panel {
+	margin-left: 20px;
+}
+
+.reclaims-list {
+
+}
+
+.reclaim-cycle {
+	padding: 5px;
+	margin-top:  10px;
+	margin-left: 20px;
+	padding-left: 20px;
+	border:  1px solid black;
+	border-radius: 10px;
+	width: 300px;
+}
+
+.reclaim-cycle-data {
+	margin-right: 10px;
+}
+

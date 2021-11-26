@@ -1,0 +1,38 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" rel="stylesheet"> 
+		<link rel="stylesheet" href="gtc.css">
+		<script data-main="gtc.js" src="require.js"></script>
+	</head>
+
+<body>
+	<div>
+		<h1>Gloomhave Turn Calculator</h1>
+		Calculates the number of turns a character will have until exhaustion due to lack of cards, under optimal conditions
+	</div>
+	<div class="input-panel">
+		<div class="cards-in-hand-panel">
+			<select class="dropdown" data-bind="options: allowableCardsInHand, value: cardsInHand, event: {change: handleCardsChange}"></select> cards in hand.
+		</div>
+		<div class="cards-in-discard-panel">
+			<select class="dropdown" data-bind="options: allowableCardsInDiscard, value: cardsInDiscard, event: {change: handleCardsChange}"></select> cards in discard.
+		</div>
+	</div>
+
+	<div class="reclaims-list">
+		Total turns to exhaustion:<span data-bind="text: turnsToExhaustion"></span>
+		<!-- ko foreach: {data: relaimCycles, as: 'relaimCycle'}  -->
+			<div class="reclaim-cycle">
+				<span data-bind="text: startingCardCount"></span> <span class="reclaim-cycle-data">cards to start.</span>
+				<span data-bind="text: turnsToReclaim"></span> turns to reclaim. <br/>
+				Burn <select class="dropdown" data-bind="options: burnableCards, value: burnedCards, event: {change: $parent.handleReclaimChange}"></select> <span class="reclaim-cycle-data">cards.</span>
+			</div>
+		<!-- /ko -->
+	</div>
+
+</body>
+
+</html>
